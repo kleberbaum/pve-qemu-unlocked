@@ -17,6 +17,12 @@ RUN apt-get install -y make \
     libacl1-dev \
     libaio-dev \
     libcap-dev \
+    libcap-ng-dev \
+    libjson-perl \
+    libsystemd-dev \
+    liburing-dev \
+    meson \
+    python3-sphinx-rtd-theme \
     libcurl4-gnutls-dev \
     libfdt-dev \
     libglusterfs-dev \
