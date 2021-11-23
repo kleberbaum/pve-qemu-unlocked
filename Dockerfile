@@ -43,4 +43,5 @@ RUN apt-get install -y make \
     xfslibs-dev \
     lintian
 RUN sed -i '/.*--target-list=.*/d' debian/rules
+RUN sed -i 's|--audio-drv-list="alsa"|--audio-drv-list="alsa,pa"|g' debian/rules
 RUN make -j8
