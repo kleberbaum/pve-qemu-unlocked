@@ -2,6 +2,8 @@
 
 Proxmox does not support anything other than `x86`/`x86_x64` even though `qemu` which is in it's backend supports to emulate MANY other CPU architectures.
 
+Furthermore there is currently only support for `alsa` driver while `qemu` has advanced support for jack and pulseaudio.
+
 Since I felt this is a disservice to `proxmox` and `qemu` as great technologies, I've decided to start fixing it.
 
 This `Dockerfile` and `make` script will build your own version of `pve-qemu` and remove the `--target-list` configure options enabling all supported CPUs and emulations for the proxmox `pve-qemu` DEB package.
@@ -24,7 +26,7 @@ make
 
 __NOTE:__ If you do not specify `-j#` in the `Dockerfile` the build will take up more than 32GB of RAM. If you want faster builds and you have more RAM, you can modify this to your specific needs.
 
-`DEB` fills will be stored in `bin/`
+`DEB` files will be stored in `bin/`
 
 # Installation
 
