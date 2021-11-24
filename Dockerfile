@@ -1,4 +1,4 @@
-FROM debian:stable
+FROM debian:bullseye
 RUN apt-get update
 RUN apt-get install -y git wget curl
 RUN mkdir -p /opt/
@@ -45,6 +45,7 @@ RUN apt-get install -y make \
         libusbredirparser-dev \
         python3-minimal \
         python3-sphinx \
+	python3-sphinx-rtd-theme \
         quilt texi2html \
         texinfo \
         uuid-dev \
@@ -52,5 +53,5 @@ RUN apt-get install -y make \
         lintian
 
 RUN sed -i '/.*--target-list=.*/d' debian/rules
-RUN sed -i 's|--audio-drv-list="alsa"|--audio-drv-list="alsa,pa"|g' debian/rules
+RUN sed -i 's|--audio-drv-list="alsa"|--audio-drv-list="alsa,pa,jack"|g' debian/rules
 RUN make -j4
