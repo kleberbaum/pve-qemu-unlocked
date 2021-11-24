@@ -13,6 +13,7 @@ RUN apt-get install -y make \
         wget \
         libcap-ng-dev \
         libjson-perl \
+	libjack-dev \
         libproxmox-backup-qemu0-dev \
         libsystemd-dev \
         liburing-dev \
